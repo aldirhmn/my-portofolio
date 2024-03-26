@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable no-alert, no-console */
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
