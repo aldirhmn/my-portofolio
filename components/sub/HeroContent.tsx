@@ -15,6 +15,8 @@ import Image from "next/image";
 const HeroContent = () => {
   const [showFullText, setShowFullText] = useState(false);
 
+  const cvUrl = "/CV2023_AldiRahmanHidayat.pdf";
+
   const initialText = `Hello! My name is Aldi Rahman Hidayat, and I am a dedicated Quality Assurance Engineer with over three years of experience in ensuring the highest quality of software products. Check out my projects and skills.`;
 
   const fullText = (
@@ -67,6 +69,7 @@ const HeroContent = () => {
   );
   return (
     <motion.div
+      id="about-me"
       initial="hidden"
       animate="visible"
       className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
@@ -95,7 +98,7 @@ const HeroContent = () => {
         </motion.div>
 
         <motion.p
-          variants={slideInFromLeft(0.8)} // Assuming you have defined this animation
+          variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
           {showFullText ? fullText : initialText}
@@ -103,10 +106,18 @@ const HeroContent = () => {
 
         <motion.a
           onClick={() => setShowFullText(!showFullText)}
-          variants={slideInFromLeft(1)} // Assuming you have defined this animation
+          variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
           {showFullText ? "Show Less" : "Learn More!"}
+        </motion.a>
+        <motion.a
+          variants={slideInFromLeft(1)}
+          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] mx-2"
+          href={cvUrl}
+          download="CV_AldiRahmanHidayat.pdf"
+        >
+          Download CV
         </motion.a>
       </div>
 
